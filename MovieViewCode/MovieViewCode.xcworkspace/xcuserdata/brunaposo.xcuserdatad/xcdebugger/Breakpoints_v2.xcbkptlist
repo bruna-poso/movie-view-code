@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "0B62CBA4-23F5-4CDC-9642-B3160C5F1AF7"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "430D991D-5B98-4715-9737-ECFC76776FDF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieViewCode/Movie/MovieHome/Network/MovieRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "fetchMovies(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "430D991D-5B98-4715-9737-ECFC76776FDF - 31e80872ca873817"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;MovieViewCode.MovieList, Swift.Error&gt;) -&gt; () in MovieViewCode.MovieRepository.fetchMovies(completion: (Swift.Result&lt;MovieViewCode.MovieList, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MovieViewCode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brunaposo/Documents/Projetos/MovieViewCode/MovieViewCode/Movie/MovieHome/Network/MovieRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "430D991D-5B98-4715-9737-ECFC76776FDF - 31e80872ca873817"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;MovieViewCode.MovieList, Swift.Error&gt;) -&gt; () in MovieViewCode.MovieRepository.fetchMovies(completion: (Swift.Result&lt;MovieViewCode.MovieList, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MovieViewCode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brunaposo/Documents/Projetos/MovieViewCode/MovieViewCode/Movie/MovieHome/Network/MovieRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "128">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "83B37D77-6CC1-4562-9C68-2AA7E5F182DB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieViewCode/Movie/MovieHome/View/MovieView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "show(movies:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "83B37D77-6CC1-4562-9C68-2AA7E5F182DB - 781be64b80d7c3bf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieViewCode.MovieView.show(movies: Swift.Array&lt;MovieViewCode.Movie&gt;) -&gt; ()"
+                  moduleName = "MovieViewCode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brunaposo/Documents/Projetos/MovieViewCode/MovieViewCode/Movie/MovieHome/View/MovieView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  uuid = "83B37D77-6CC1-4562-9C68-2AA7E5F182DB - 781be64b80d7c3bf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieViewCode.MovieView.show(movies: Swift.Array&lt;MovieViewCode.Movie&gt;) -&gt; ()"
+                  moduleName = "MovieViewCode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brunaposo/Documents/Projetos/MovieViewCode/MovieViewCode/Movie/MovieHome/View/MovieView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
