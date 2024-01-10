@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-struct Movie: Codable {
+struct Movie: Codable, Equatable {
     var poster_path: String = ""
     var title: String = ""
     var overview: String = ""
