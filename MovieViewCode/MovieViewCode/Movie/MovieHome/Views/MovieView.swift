@@ -24,19 +24,6 @@ final class MovieView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func show(movies: [Movie]) {
-        dataSource = MovieTableViewDataSource(movieList: movies)
-        tableView.dataSource = dataSource
-        tableView.delegate = dataSource
-        dataSource?.register(in: self.tableView)
-        self.tableView.reloadData()
-        
-        //TO DO: Mudar isso de lugar
-        dataSource?.didSelect = { [weak self] movie in
-            self?.didSelect?(movie)
-        }
-    }
-
     private func buildViewHierarchy() {
         addSubview(tableView)
     }
@@ -52,5 +39,20 @@ final class MovieView: UIView {
         tableView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         tableView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+    }
+}
+
+extension MovieView: MovieViewType {
+    func show(movies: [Movie]) {
+        dataSource = MovieTableViewDataSource(movieList: movies)
+        tableView.dataSource = dataSource
+        tableView.delegate = dataSource
+        dataSource?.register(in: self.tableView)
+        self.tableView.reloadData()
+        
+        //TO DO: Mudar isso de lugar
+        dataSource?.didSelect = { [weak self] movie in
+            self?.didSelect?(movie)
+        }
     }
 }

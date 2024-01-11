@@ -7,84 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "430D991D-5B98-4715-9737-ECFC76776FDF"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MovieViewCode/Movie/MovieHome/Network/MovieRepository.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "13"
-            endingLineNumber = "13"
-            landmarkName = "fetchMovies(completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "430D991D-5B98-4715-9737-ECFC76776FDF - 31e80872ca873817"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;MovieViewCode.MovieList, Swift.Error&gt;) -&gt; () in MovieViewCode.MovieRepository.fetchMovies(completion: (Swift.Result&lt;MovieViewCode.MovieList, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "MovieViewCode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/brunaposo/Documents/Projetos/MovieViewCode/MovieViewCode/Movie/MovieHome/Network/MovieRepository.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "100">
-               </Location>
-               <Location
-                  uuid = "430D991D-5B98-4715-9737-ECFC76776FDF - 31e80872ca873817"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;MovieViewCode.MovieList, Swift.Error&gt;) -&gt; () in MovieViewCode.MovieRepository.fetchMovies(completion: (Swift.Result&lt;MovieViewCode.MovieList, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "MovieViewCode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/brunaposo/Documents/Projetos/MovieViewCode/MovieViewCode/Movie/MovieHome/Network/MovieRepository.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "128">
-               </Location>
-               <Location
-                  uuid = "430D991D-5B98-4715-9737-ECFC76776FDF - 7f71a9adc3bdf187"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;MovieViewCode.MovieList, Swift.Error&gt;) -&gt; () in MovieViewCode.MovieRepository.fetchMovies(completion: (Swift.Result&lt;MovieViewCode.MovieList, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "MovieViewCode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/brunaposo/Documents/Projetos/movie-view-code/MovieViewCode/MovieViewCode/Movie/MovieHome/Network/MovieRepository.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "100">
-               </Location>
-               <Location
-                  uuid = "430D991D-5B98-4715-9737-ECFC76776FDF - 7f71a9adc3bdf187"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;MovieViewCode.MovieList, Swift.Error&gt;) -&gt; () in MovieViewCode.MovieRepository.fetchMovies(completion: (Swift.Result&lt;MovieViewCode.MovieList, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "MovieViewCode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/brunaposo/Documents/Projetos/movie-view-code/MovieViewCode/MovieViewCode/Movie/MovieHome/Network/MovieRepository.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "128">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "83B37D77-6CC1-4562-9C68-2AA7E5F182DB"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -143,6 +65,22 @@
             startingLineNumber = "91"
             endingLineNumber = "91"
             landmarkName = "show(movie:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AEEE6887-808D-4C9A-A314-54784A34D499"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieViewCode/Movie/MovieHome/MovieViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "fetchMovieList()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

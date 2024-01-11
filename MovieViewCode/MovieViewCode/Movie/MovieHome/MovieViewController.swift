@@ -2,11 +2,11 @@ import UIKit
 
 final class MovieViewController: UITableViewController {
 
-    private var contentView: MovieView
-    private var repository: MovieRepository
+    private var contentView: MovieViewType
+    private var repository: MovieRepositoryType
     
-    init(contentView: MovieView = MovieView(), 
-         repository: MovieRepository = MovieRepository(http: APIClient())) {
+    init(contentView: MovieViewType = MovieView(), 
+         repository: MovieRepositoryType = MovieRepository(http: APIClient())) {
         self.contentView = contentView
         self.repository = repository
         super.init(nibName: nil, bundle: nil)

@@ -2,9 +2,9 @@ import UIKit
 
 final class MovieRepository: MovieRepositoryType {
     
-    private let http: APIClient
+    private let http: APIClientType
     
-    init(http: APIClient) {
+    init(http: APIClientType) {
         self.http = http
     }
     
