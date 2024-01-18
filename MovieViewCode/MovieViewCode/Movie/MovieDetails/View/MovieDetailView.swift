@@ -46,7 +46,7 @@ final class MovieDetailView: UIView {
         imgView.contentMode = .scaleAspectFill
         imgView.layer.cornerRadius = 50
         imgView.clipsToBounds = true
-        imgView.backgroundColor = .yellow
+        imgView.backgroundColor = .gray
         imgView.translatesAutoresizingMaskIntoConstraints = false
         return imgView
     }()
@@ -61,12 +61,6 @@ final class MovieDetailView: UIView {
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-
-    func show(viewModel: Movie){
-        titleDetailLabel.text = viewModel.title
-        descriptionDetailLabel.text = viewModel.overview
-        imageDetailImageView.kf.setImage(with: viewModel.posterUrl())
     }
 
     private func setupLayoutDetail(){
@@ -103,5 +97,13 @@ final class MovieDetailView: UIView {
         scrollView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         scrollView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         scrollView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+    }
+}
+
+extension MovieDetailView: MovieDetailViewType {
+    func show(viewModel: Movie){
+        titleDetailLabel.text = viewModel.title
+        descriptionDetailLabel.text = viewModel.overview
+        imageDetailImageView.kf.setImage(with: viewModel.posterUrl())
     }
 }

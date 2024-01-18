@@ -2,13 +2,12 @@ import UIKit
 
 final class MovieDetailViewController: UIViewController {
 
-    private let contentView: MovieDetailView
+    private let contentView: MovieDetailViewType
     private let movie: Movie
     
-    init (movie: Movie, contentView: MovieDetailView) {
+    init (movie: Movie, contentView: MovieDetailViewType = MovieDetailView()) {
         self.movie = movie
         self.contentView = contentView
-        
         super.init(nibName: nil, bundle: nil)
     }
 

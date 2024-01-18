@@ -37,11 +37,19 @@ final class MovieViewController: UITableViewController {
             switch result {
             case .success(let items):
                 self.contentView.show(movies: items.results)
-            case .failure(let error):
-                // TODO: O que acha de tratar isso aqui mostrando um Alert?
-                print("\(self) error on get movies: \(error)")
+            case .failure:
+                self.showAlertError()
             }
         }
+    }
+    
+    private func showAlertError() {
+        let alert = UIAlertController(title: "Erro", message: "Não foi possíver carregar os itens!", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Tentar novamente", style: UIAlertAction.Style.destructive, handler: { _ in
+            self.fetchMovieList()
+        }))
+        
+        present(alert, animated: true, completion: nil)
     }
 
     private func bindLayoutEvents() {
@@ -51,8 +59,7 @@ final class MovieViewController: UITableViewController {
     }
 
     private func createNavigationDetail(movie: Movie) {
-        let movieDetailView = MovieDetailView()
-        let detailViewController = MovieDetailViewController(movie: movie, contentView: movieDetailView)
+        let detailViewController = MovieDetailViewController(movie: movie)
         navigationController?.pushViewController(detailViewController, animated: true)
     }
 
