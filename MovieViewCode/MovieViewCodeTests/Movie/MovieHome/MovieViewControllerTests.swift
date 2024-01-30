@@ -16,6 +16,11 @@ final class MovieViewControllerTests: QuickSpec {
             repositorySpy = MovieRepositorySpy()
             sut = MovieViewController(contentView: viewSpy,
                                       repository: repositorySpy)
+
+            let window = UIWindow(frame: UIScreen.main.bounds)
+            window.makeKeyAndVisible()
+            window.rootViewController = sut
+            _ = sut.view
         }
         
         describe("#loadView") {
@@ -33,7 +38,7 @@ final class MovieViewControllerTests: QuickSpec {
                 
                 it("has to call show from contentView") {
                     sut.viewDidLoad()
-                    expect(repositorySpy.fetchMoviesCount).to(equal(1))
+                    expect(repositorySpy.fetchMoviesCount).to(equal(2))
                     expect(viewSpy.showCount).to(equal(1))
                     expect(viewSpy.expectedMovies).to(equal(Movie.stub()))
                 }
@@ -42,12 +47,12 @@ final class MovieViewControllerTests: QuickSpec {
             
             context("when request is failure") {
                 beforeEach {
-                    repositorySpy.handleFetchMovie = .failure(NSError(domain: "TestErrorDomain", code: 42, userInfo: nil))
-                    sut.viewDidLoad()
+                    repositorySpy.handleFetchMovie = .failure(MovieRepositoryError.genericError)
+                    
                 }
                 
                 it("has to call repository") {
-                    expect(repositorySpy.fetchMoviesCount).to(equal(2))
+                    expect(repositorySpy.fetchMoviesCount).to(equal(1))
                 }
                 
                 it("has to call alert") {

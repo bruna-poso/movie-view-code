@@ -47,6 +47,7 @@
 		F646AC1A2B4F2B8400059B00 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F646AC192B4F2B8400059B00 /* View+Extensions.swift */; };
 		F646AC1C2B4F38E200059B00 /* MovieTableViewDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F646AC1B2B4F38E200059B00 /* MovieTableViewDataSourceTests.swift */; };
 		F646AC1E2B4F3A0500059B00 /* UITableViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F646AC1D2B4F3A0500059B00 /* UITableViewMock.swift */; };
+		F651757E2B5EBCA10035CD35 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = F651757D2B5EBCA10035CD35 /* Test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		F646AC192B4F2B8400059B00 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		F646AC1B2B4F38E200059B00 /* MovieTableViewDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewDataSourceTests.swift; sourceTree = "<group>"; };
 		F646AC1D2B4F3A0500059B00 /* UITableViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewMock.swift; sourceTree = "<group>"; };
+		F651757D2B5EBCA10035CD35 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		F6F573992B4F436C0075D5D0 /* InterfaceBuilderKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InterfaceBuilderKit.framework; path = Library/Frameworks/InterfaceBuilderKit.framework; sourceTree = DEVELOPER_DIR; };
 		F6F5739B2B4F43AA0075D5D0 /* Python3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python3.framework; path = Library/Frameworks/Python3.framework; sourceTree = DEVELOPER_DIR; };
 		F6F5739C2B4F43AA0075D5D0 /* XcodeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XcodeKit.framework; path = Library/Frameworks/XcodeKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -314,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				F646ABF42B4F11C200059B00 /* Movie */,
+				F651757D2B5EBCA10035CD35 /* Test.swift */,
 			);
 			path = MovieViewCodeTests;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				F638F2932B506F7100F8EB74 /* MovieRepositorySpy.swift in Sources */,
 				F646ABFA2B4F12D600059B00 /* MovieServiceTests.swift in Sources */,
 				F646AC1C2B4F38E200059B00 /* MovieTableViewDataSourceTests.swift in Sources */,
+				F651757E2B5EBCA10035CD35 /* Test.swift in Sources */,
 				F646AC142B4F273A00059B00 /* MovieViewTests.swift in Sources */,
 				F6457D4F2B59E1AB002B8DF0 /* MovieDetailViewControllerTests.swift in Sources */,
 				F6457D542B59E272002B8DF0 /* MovieDetailViewSpy.swift in Sources */,

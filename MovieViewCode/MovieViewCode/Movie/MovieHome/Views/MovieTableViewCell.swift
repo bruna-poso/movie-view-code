@@ -8,6 +8,7 @@ final class MovieTableViewCell: UITableViewCell {
         lbl.font = UIFont.boldSystemFont(ofSize: 16)
         lbl.textAlignment = .left
         lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.numberOfLines = 2
         return lbl
     }()
     
@@ -16,7 +17,7 @@ final class MovieTableViewCell: UITableViewCell {
         lbl.textColor = .gray
         lbl.font = UIFont.systemFont(ofSize: 16)
         lbl.textAlignment = .left
-        lbl.numberOfLines = 3
+        lbl.numberOfLines = 4
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
@@ -58,6 +59,7 @@ final class MovieTableViewCell: UITableViewCell {
     private func setupLayoutCell() {
         addImagemLayout()
         addTitleLayout()
+        addDescriptionLayout()
         addStackViewLayout()
     }
     
@@ -69,25 +71,46 @@ final class MovieTableViewCell: UITableViewCell {
     }
     
     private func addImagemLayout() {
-        imageCellImageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        imageCellImageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        imageCellImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 22).isActive = true
-        imageCellImageView.topAnchor.constraint(equalTo: topAnchor, constant: 13).isActive = true
+        NSLayoutConstraint.activate([
+            imageCellImageView.widthAnchor.constraint(equalToConstant: 100),
+            imageCellImageView.heightAnchor.constraint(equalToConstant: 100),
+            imageCellImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 22),
+            imageCellImageView.topAnchor.constraint(equalTo: topAnchor, constant: 13)
+        ])
     }
     
     private func addTitleLayout(){
-        titleCellLabel.leadingAnchor.constraint(equalTo: imageCellImageView.trailingAnchor, constant: 20).isActive = true
-        titleCellLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20).isActive = true
+        NSLayoutConstraint.activate([
+            titleCellLabel.leadingAnchor.constraint(equalTo: imageCellImageView.trailingAnchor, constant: 20),
+            titleCellLabel.topAnchor.constraint(equalTo: imageCellImageView.topAnchor)
+        ])
+    }
+    
+    private func addDescriptionLayout(){
+        NSLayoutConstraint.activate([
+            descriptionCellLabel.topAnchor.constraint(equalTo: titleCellLabel.bottomAnchor, constant: 4),
+        ])
     }
     
     private func addStackViewLayout() {
-        stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25).isActive = true
-        stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20).isActive = true
+        NSLayoutConstraint.activate([
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15),
+            stackView.heightAnchor.constraint(greaterThanOrEqualToConstant: 95),
+        ])
     }
     
     func show(movie: Movie) {
-        titleCellLabel.text = movie.title
-        descriptionCellLabel.text = movie.overview
+        let releaseYear = String(movie.release_date.prefix(4))
+        let movieTitle = "\(movie.title) (\(releaseYear))"
+        titleCellLabel.text = movieTitle
+
+        if movie.overview.isEmpty {
+            descriptionCellLabel.text = "A sinopse não está disponível no seu idioma"
+        } else {
+            descriptionCellLabel.text = movie.overview
+        }
+        
         imageCellImageView.kf.setImage(with: movie.posterUrl())
     }
 }

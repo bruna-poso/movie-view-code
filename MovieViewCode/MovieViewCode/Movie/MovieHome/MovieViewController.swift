@@ -44,8 +44,8 @@ final class MovieViewController: UITableViewController {
     }
     
     private func showAlertError() {
-        let alert = UIAlertController(title: "Erro", message: "Não foi possíver carregar os itens!", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Tentar novamente", style: UIAlertAction.Style.destructive, handler: { _ in
+        let alert = UIAlertController(title: MovieStrings.errorTitle, message: MovieStrings.errorSubtitle, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: MovieStrings.tryAgain, style: UIAlertAction.Style.destructive, handler: { _ in
             self.fetchMovieList()
         }))
         
