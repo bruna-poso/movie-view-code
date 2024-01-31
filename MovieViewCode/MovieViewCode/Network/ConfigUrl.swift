@@ -1,8 +1,10 @@
 import UIKit
 
+// https://developer.themoviedb.org/docs/getting-started
+
 struct ConfigUrl {
     static let baseUrl = "https://api.themoviedb.org/3/"
-    static let apiKey = "api_key=c3ba56c1294229258cc0e1e092d0706c"
+    static let apiKey = "api_key=" + (ProcessInfo.processInfo.environment["API_TOKEN"] ?? "") // Enter your TMDB token.
     static let language = "&language=pt-BR"
     static let popular = "movie/popular?"
     static let page = "&page=1"

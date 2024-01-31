@@ -49,6 +49,7 @@
 		F646AC1C2B4F38E200059B00 /* MovieTableViewDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F646AC1B2B4F38E200059B00 /* MovieTableViewDataSourceTests.swift */; };
 		F646AC1E2B4F3A0500059B00 /* UITableViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F646AC1D2B4F3A0500059B00 /* UITableViewMock.swift */; };
 		F64B04362B6A7E8900C65905 /* MovieStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64B04352B6A7E8900C65905 /* MovieStarView.swift */; };
+		F67D5AA52B6AC25900F2EAE6 /* .env in Resources */ = {isa = PBXBuildFile; fileRef = F67D5AA42B6AC25900F2EAE6 /* .env */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,7 @@
 		F646AC1B2B4F38E200059B00 /* MovieTableViewDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewDataSourceTests.swift; sourceTree = "<group>"; };
 		F646AC1D2B4F3A0500059B00 /* UITableViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewMock.swift; sourceTree = "<group>"; };
 		F64B04352B6A7E8900C65905 /* MovieStarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieStarView.swift; sourceTree = "<group>"; };
+		F67D5AA42B6AC25900F2EAE6 /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; name = .env; path = ../.env; sourceTree = "<group>"; };
 		F6F573992B4F436C0075D5D0 /* InterfaceBuilderKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InterfaceBuilderKit.framework; path = Library/Frameworks/InterfaceBuilderKit.framework; sourceTree = DEVELOPER_DIR; };
 		F6F5739B2B4F43AA0075D5D0 /* Python3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python3.framework; path = Library/Frameworks/Python3.framework; sourceTree = DEVELOPER_DIR; };
 		F6F5739C2B4F43AA0075D5D0 /* XcodeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XcodeKit.framework; path = Library/Frameworks/XcodeKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -164,6 +166,7 @@
 		AB7FDE0325E3E60300E092AF = {
 			isa = PBXGroup;
 			children = (
+				F67D5AA42B6AC25900F2EAE6 /* .env */,
 				AB7FDE0E25E3E60300E092AF /* MovieViewCode */,
 				F646ABEC2B4F11BA00059B00 /* MovieViewCodeTests */,
 				AB7FDE0D25E3E60300E092AF /* Products */,
@@ -500,6 +503,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F67D5AA52B6AC25900F2EAE6 /* .env in Resources */,
 				AB7FDE1C25E3E60800E092AF /* LaunchScreen.storyboard in Resources */,
 				AB7FDE1925E3E60800E092AF /* Assets.xcassets in Resources */,
 			);
