@@ -1,6 +1,6 @@
 import UIKit
 
-// https://developer.themoviedb.org/docs/getting-started
+//https://developer.themoviedb.org/docs/getting-started
 
 struct ConfigUrl {
     static let baseUrl = "https://api.themoviedb.org/3/"

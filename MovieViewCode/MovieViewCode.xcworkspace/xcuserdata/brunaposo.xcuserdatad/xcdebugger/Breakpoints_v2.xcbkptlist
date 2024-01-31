@@ -130,6 +130,38 @@
             endingLineNumber = "7"
             landmarkName = "ConfigUrl"
             landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "B65AA51C-F73C-486B-A726-30A9DE36FABE - a236fb9ec3d2cd59"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "one-time initialization function for apiKey"
+                  moduleName = "MovieViewCode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brunaposo/Documents/Projetos/movie-view-code/MovieViewCode/MovieViewCode/Network/ConfigUrl.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "7"
+                  endingLineNumber = "7"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "B65AA51C-F73C-486B-A726-30A9DE36FABE - a5a03f8ed97bfd47"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieViewCode.ConfigUrl.apiKey.unsafeMutableAddressor : Swift.String"
+                  moduleName = "MovieViewCode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brunaposo/Documents/Projetos/movie-view-code/MovieViewCode/MovieViewCode/Network/ConfigUrl.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "7"
+                  endingLineNumber = "7"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

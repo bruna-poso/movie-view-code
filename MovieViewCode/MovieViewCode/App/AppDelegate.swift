@@ -5,6 +5,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        if let envPath = Bundle.main.path(forResource: ".env", ofType: nil) {
+            do {
+                let envContents = try String(contentsOfFile: envPath, encoding: .utf8)
+                print("Conteúdo do arquivo .env:", envContents)
+                
+                let envLines = envContents.components(separatedBy: .newlines)
+                for line in envLines {
+                    let components = line.components(separatedBy: "=")
+                    if components.count == 2 {
+                        let key = components[0].trimmingCharacters(in: .whitespacesAndNewlines)
+                        let value = components[1].trimmingCharacters(in: .whitespacesAndNewlines)
+                        setenv(key, value, 1)
+                    }
+                }
+            } catch {
+                print("Erro ao carregar o arquivo .env:", error.localizedDescription)
+            }
+        }
+
         return true
     }
 
