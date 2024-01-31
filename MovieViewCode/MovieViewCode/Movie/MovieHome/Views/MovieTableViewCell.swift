@@ -17,7 +17,7 @@ final class MovieTableViewCell: UITableViewCell {
         lbl.textColor = .gray
         lbl.font = UIFont.systemFont(ofSize: 16)
         lbl.textAlignment = .left
-        lbl.numberOfLines = 4
+        lbl.numberOfLines = 5
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
@@ -41,6 +41,12 @@ final class MovieTableViewCell: UITableViewCell {
         return stackView
     }()
     
+    private let starView: MovieStarView = {
+        let view = MovieStarView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?){
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         buildViewHierarchy()
@@ -58,6 +64,7 @@ final class MovieTableViewCell: UITableViewCell {
     
     private func setupLayoutCell() {
         addImagemLayout()
+        addStarLayout()
         addTitleLayout()
         addDescriptionLayout()
         addStackViewLayout()
@@ -66,6 +73,7 @@ final class MovieTableViewCell: UITableViewCell {
     private func buildViewHierarchy() {
         addSubview(stackView)
         addSubview(imageCellImageView)
+        addSubview(starView)
         stackView.addArrangedSubview(titleCellLabel)
         stackView.addArrangedSubview(descriptionCellLabel)
     }
@@ -76,6 +84,15 @@ final class MovieTableViewCell: UITableViewCell {
             imageCellImageView.heightAnchor.constraint(equalToConstant: 100),
             imageCellImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 22),
             imageCellImageView.topAnchor.constraint(equalTo: topAnchor, constant: 13)
+        ])
+    }
+    
+    private func addStarLayout(){
+        NSLayoutConstraint.activate([
+            starView.topAnchor.constraint(equalTo: imageCellImageView.bottomAnchor, constant: 10),
+//            starView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 45),
+            starView.centerXAnchor.constraint(equalTo: imageCellImageView.centerXAnchor),
+            starView.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -10),
         ])
     }
     
@@ -95,7 +112,7 @@ final class MovieTableViewCell: UITableViewCell {
     private func addStackViewLayout() {
         NSLayoutConstraint.activate([
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15),
+            stackView.bottomAnchor.constraint(equalTo: starView.bottomAnchor, constant: -10),
             stackView.heightAnchor.constraint(greaterThanOrEqualToConstant: 95),
         ])
     }
@@ -104,13 +121,13 @@ final class MovieTableViewCell: UITableViewCell {
         let releaseYear = String(movie.release_date.prefix(4))
         let movieTitle = "\(movie.title) (\(releaseYear))"
         titleCellLabel.text = movieTitle
+        imageCellImageView.kf.setImage(with: movie.posterUrl())
+        starView.show(voteAverage: movie.vote_average)
 
         if movie.overview.isEmpty {
-            descriptionCellLabel.text = "A sinopse não está disponível no seu idioma"
+            descriptionCellLabel.text = "A sinopse não está disponível no seu idioma \n"
         } else {
             descriptionCellLabel.text = movie.overview
         }
-        
-        imageCellImageView.kf.setImage(with: movie.posterUrl())
     }
 }

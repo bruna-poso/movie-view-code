@@ -11,13 +11,15 @@ final class MovieTableViewCellTests: QuickSpec {
 
         beforeEach {
             sut = MovieTableViewCell()
-            sut.frame = CGRect(x: 0, y: 0, width: 620, height: 130)
+            sut.frame = CGRect(x: 0, y: 0, width: 620, height: 160)
         }
 
         describe("#show") {
             beforeEach {
-                sut.show(movie: Movie(poster_path: "/mBaXZ95R2OxueZhvQbcEWy2DqyO.jpg",
+                sut.show(movie: Movie(poster_path: "//99IaUjY4hXdGlYVcnr4GjzTzFBL.jpg",
                                       title: "The Hunger Games: The Ballad of Songbirds & Snakes",
+                                      release_date: "2024-01-01",
+                                      vote_average: 8.248,
                                       overview: "64 years before he becomes the tyrannical president of Panem, Coriolanus Snow sees a chance for a change in fortunes when he mentors Lucy Gray Baird, the female tribute from District 12."))
             }
 

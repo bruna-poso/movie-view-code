@@ -50,6 +50,12 @@ final class MovieDetailView: UIView {
         imgView.translatesAutoresizingMaskIntoConstraints = false
         return imgView
     }()
+    
+    private let starView: MovieStarView = {
+        let view = MovieStarView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
 
     init() {
         super.init(frame: .zero)
@@ -74,6 +80,8 @@ final class MovieDetailView: UIView {
         scrollView.addSubview(stackView)
         stackView.addArrangedSubview(imageDetailImageView)
         stackView.setCustomSpacing(20, after: imageDetailImageView)
+        stackView.addArrangedSubview(starView)
+        stackView.setCustomSpacing(20, after: starView)
         stackView.addArrangedSubview(titleDetailLabel)
         stackView.addArrangedSubview(descriptionDetailLabel)
     }
@@ -86,24 +94,36 @@ final class MovieDetailView: UIView {
     }
 
     private func addConstraintsStackView() {
-        stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: leadingAnchor,  constant: 30).isActive = true
-        stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 30).isActive = true
-        stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -30).isActive = true
+        NSLayoutConstraint.activate([
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor,  constant: 30),
+            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 30),
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -30)
+        ])
     }
 
     private func addConstraintsScrollView() {
-        scrollView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        scrollView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        scrollView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: leadingAnchor)
+        ])
     }
 }
 
 extension MovieDetailView: MovieDetailViewType {
     func show(viewModel: Movie){
-        titleDetailLabel.text = viewModel.title
-        descriptionDetailLabel.text = viewModel.overview
+        let releaseYear = String(viewModel.release_date.prefix(4))
+        let movieTitle = "\(viewModel.title) (\(releaseYear))"
+        titleDetailLabel.text = movieTitle
         imageDetailImageView.kf.setImage(with: viewModel.posterUrl())
+        starView.show(voteAverage: viewModel.vote_average)
+        
+        if viewModel.overview.isEmpty {
+            descriptionDetailLabel.text = "A sinopse não está disponível no seu idioma \n"
+        } else {
+            descriptionDetailLabel.text = viewModel.overview
+        }
     }
 }
