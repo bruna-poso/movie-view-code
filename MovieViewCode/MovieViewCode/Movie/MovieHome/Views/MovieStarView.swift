@@ -2,6 +2,13 @@ import Foundation
 import UIKit
 
 final class MovieStarView: UIView {
+    
+    var fontSize: CGFloat = 16 {
+        didSet {
+            rateTextLabel.font = UIFont.boldSystemFont(ofSize: fontSize)
+        }
+    }
+
     private let imageView: UIImageView = {
         var image = UIImageView()
         image.image = UIImage(named: "star-icon")

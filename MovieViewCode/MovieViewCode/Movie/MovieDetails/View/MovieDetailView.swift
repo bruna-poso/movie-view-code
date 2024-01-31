@@ -53,6 +53,7 @@ final class MovieDetailView: UIView {
     
     private let starView: MovieStarView = {
         let view = MovieStarView()
+        view.fontSize = 20
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -78,10 +79,10 @@ final class MovieDetailView: UIView {
     private func buildViewHierarchy() {
         addSubview(scrollView)
         scrollView.addSubview(stackView)
+        stackView.addArrangedSubview(starView)
+        stackView.setCustomSpacing(10, after: starView)
         stackView.addArrangedSubview(imageDetailImageView)
         stackView.setCustomSpacing(20, after: imageDetailImageView)
-        stackView.addArrangedSubview(starView)
-        stackView.setCustomSpacing(20, after: starView)
         stackView.addArrangedSubview(titleDetailLabel)
         stackView.addArrangedSubview(descriptionDetailLabel)
     }
