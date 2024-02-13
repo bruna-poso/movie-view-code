@@ -1,15 +1,15 @@
-
 import UIKit
+import SkeletonView
 
 final class MovieTableViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
 
     var didSelect: ((Movie) -> Void)?
 
-    private var movieList: [Movie]
+    private var movieState: MovieState
     private let cellId = "cellId"
-
-    init(movieList: [Movie]) {
-        self.movieList = movieList
+    
+    init(state: MovieState) {
+        self.movieState = state
     }
     
     func register(in tableView: UITableView) {
@@ -17,17 +17,41 @@ final class MovieTableViewDataSource: NSObject, UITableViewDataSource, UITableVi
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movieList.count
+        switch movieState {
+        case .ready(let movies):
+            return movies.count
+        case .loading:
+            return 10
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let movie = movieList[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MovieTableViewCell
-        cell.show(movie: movie)
-        return cell
+        switch movieState {
+        case .ready(let movies):
+            let movie = movies[indexPath.row]
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MovieTableViewCell
+            
+            cell.hideSkeleton()
+            cell.show(movie: movie)
+            return cell
+            
+        case .loading:
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MovieTableViewCell
+            cell.layoutIfNeeded()
+            cell.showSkeleton()
+            return cell
+        }
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        didSelect?(movieList[indexPath.row])
+        if case let .ready(movies) = movieState {
+             didSelect?(movies[indexPath.row])
+         }
+    }
+}
+
+extension  MovieTableViewDataSource: SkeletonTableViewDataSource {
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        return cellId
     }
 }

@@ -62,8 +62,8 @@
             filePath = "MovieViewCode/Movie/MovieHome/Views/MovieTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "show(movie:)"
             landmarkType = "7">
          </BreakpointContent>

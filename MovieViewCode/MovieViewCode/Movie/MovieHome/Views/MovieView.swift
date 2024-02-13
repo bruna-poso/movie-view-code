@@ -43,14 +43,13 @@ final class MovieView: UIView {
 }
 
 extension MovieView: MovieViewType {
-    func show(movies: [Movie]) {
-        dataSource = MovieTableViewDataSource(movieList: movies)
+    func show(state: MovieState) {
+        dataSource = MovieTableViewDataSource(state: state)
         tableView.dataSource = dataSource
         tableView.delegate = dataSource
         dataSource?.register(in: self.tableView)
         self.tableView.reloadData()
         
-        //TO DO: Mudar isso de lugar
         dataSource?.didSelect = { [weak self] movie in
             self?.didSelect?(movie)
         }

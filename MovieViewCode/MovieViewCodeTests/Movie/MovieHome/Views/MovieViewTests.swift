@@ -15,12 +15,24 @@ final class MovieViewTests: QuickSpec {
         }
         
         describe("#show") {
-            beforeEach {
-                sut.show(movies: Movie.stub())
+            context("with state ready") {
+                beforeEach {
+                    sut.show(state: .ready(Movie.stub()))
+                }
+                
+                it("has build the layout properly") {
+//                    expect(sut).to(haveValidSnapshot())
+                }
             }
             
-            it("has build the layout properly") {
-//                expect(sut).to(haveValidSnapshot())
+            context("with state loading") {
+                beforeEach {
+                    sut.show(state: .loading)
+                }
+                
+                it("has build the layout properly") {
+//                    expect(sut).to(haveValidSnapshot())
+                }
             }
         }
         

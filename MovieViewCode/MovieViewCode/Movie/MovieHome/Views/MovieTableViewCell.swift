@@ -1,5 +1,6 @@
 import UIKit
 import Kingfisher
+import SkeletonView
 
 final class MovieTableViewCell: UITableViewCell {
     private let titleCellLabel: UILabel = {
@@ -9,6 +10,9 @@ final class MovieTableViewCell: UITableViewCell {
         lbl.textAlignment = .left
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.numberOfLines = 2
+        lbl.isSkeletonable = true
+        lbl.skeletonTextNumberOfLines = 1
+        lbl.linesCornerRadius = 4
         return lbl
     }()
     
@@ -19,6 +23,9 @@ final class MovieTableViewCell: UITableViewCell {
         lbl.textAlignment = .left
         lbl.numberOfLines = 5
         lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.isSkeletonable = true
+        lbl.skeletonTextNumberOfLines = 3
+        lbl.linesCornerRadius = 4
         return lbl
     }()
     
@@ -29,6 +36,7 @@ final class MovieTableViewCell: UITableViewCell {
         imgView.clipsToBounds = true
         imgView.translatesAutoresizingMaskIntoConstraints = false
         imgView.backgroundColor = .gray
+        imgView.isSkeletonable = true
         return imgView
     }()
     
@@ -44,6 +52,7 @@ final class MovieTableViewCell: UITableViewCell {
     private let starView: MovieStarView = {
         let view = MovieStarView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.isSkeletonable = true
         return view
     }()
 
@@ -71,11 +80,27 @@ final class MovieTableViewCell: UITableViewCell {
     }
     
     private func buildViewHierarchy() {
-        addSubview(stackView)
-        addSubview(imageCellImageView)
-        addSubview(starView)
         stackView.addArrangedSubview(titleCellLabel)
         stackView.addArrangedSubview(descriptionCellLabel)
+        addSubview(stackView)
+        
+        addSubview(imageCellImageView)
+        addSubview(starView)
+
+    }
+    
+    func showSkeleton() {
+        titleCellLabel.showAnimatedGradientSkeleton()
+        descriptionCellLabel.showAnimatedGradientSkeleton()
+        imageCellImageView.showAnimatedGradientSkeleton()
+        starView.showAnimatedGradientSkeleton()
+    }
+    
+    func hideSkeleton() {
+        titleCellLabel.hideSkeleton()
+        descriptionCellLabel.hideSkeleton()
+        imageCellImageView.hideSkeleton()
+        starView.hideSkeleton()
     }
     
     private func addImagemLayout() {
@@ -90,7 +115,6 @@ final class MovieTableViewCell: UITableViewCell {
     private func addStarLayout(){
         NSLayoutConstraint.activate([
             starView.topAnchor.constraint(equalTo: imageCellImageView.bottomAnchor, constant: 10),
-//            starView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 45),
             starView.centerXAnchor.constraint(equalTo: imageCellImageView.centerXAnchor),
             starView.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -10),
         ])

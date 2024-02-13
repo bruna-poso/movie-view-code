@@ -6,5 +6,6 @@ protocol MovieRepositoryType {
 
 protocol MovieViewType where Self: UIView {
     var didSelect: ((Movie) -> Void)? { get set }
-    func show(movies: [Movie])
+//    func show(movies: [Movie])
+    func show(state: MovieState)
 }

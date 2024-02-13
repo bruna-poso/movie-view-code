@@ -39,7 +39,8 @@ final class MovieViewControllerTests: QuickSpec {
                 it("has to call show from contentView") {
                     sut.viewDidLoad()
                     expect(repositorySpy.fetchMoviesCount).to(equal(2))
-                    expect(viewSpy.showCount).to(equal(1))
+                    expect(viewSpy.showLoadingCount).to(equal(2))
+                    expect(viewSpy.showReadyCount).to(equal(1))
                     expect(viewSpy.expectedMovies).to(equal(Movie.stub()))
                 }
                 

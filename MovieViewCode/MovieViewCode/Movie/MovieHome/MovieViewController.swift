@@ -33,10 +33,12 @@ final class MovieViewController: UITableViewController {
     }
     
     private func fetchMovieList(){
+        contentView.show(state: .loading)
+
         repository.fetchMovies() { (result) in
             switch result {
             case .success(let items):
-                self.contentView.show(movies: items.results)
+                self.contentView.show(state: .ready(items.results))
             case .failure:
                 self.showAlertError()
             }

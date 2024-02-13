@@ -12,7 +12,7 @@ final class MovieTableViewDataSourceTests: QuickSpec {
         
         beforeEach {
             tableViewMock = UITableViewMock()
-            sut = MovieTableViewDataSource(movieList: movieList)
+            sut = MovieTableViewDataSource(state: .ready(Movie.stub()))
         }
         
         describe("#numberOfRowsInSection") {

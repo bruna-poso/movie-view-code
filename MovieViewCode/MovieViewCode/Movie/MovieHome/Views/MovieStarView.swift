@@ -1,5 +1,6 @@
 import Foundation
 import UIKit
+import SkeletonView
 
 final class MovieStarView: UIView {
     
@@ -13,6 +14,7 @@ final class MovieStarView: UIView {
         var image = UIImageView()
         image.image = UIImage(named: "star-icon")
         image.translatesAutoresizingMaskIntoConstraints = false
+        image.isSkeletonable = true
         return image
     }()
     
@@ -22,6 +24,7 @@ final class MovieStarView: UIView {
         lbl.font = UIFont.boldSystemFont(ofSize: 16)
         lbl.textAlignment = .left
         lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.isSkeletonable = true
         return lbl
     }()
     

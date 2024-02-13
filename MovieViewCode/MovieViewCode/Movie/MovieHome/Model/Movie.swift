@@ -1,6 +1,11 @@
 import Foundation
 import UIKit
 
+enum MovieState {
+    case ready([Movie])
+    case loading
+}
+
 struct Movie: Codable, Equatable {
     var poster_path: String = ""
     var title: String = ""

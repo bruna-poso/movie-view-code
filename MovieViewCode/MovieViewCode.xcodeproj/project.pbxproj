@@ -50,6 +50,7 @@
 		F646AC1E2B4F3A0500059B00 /* UITableViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F646AC1D2B4F3A0500059B00 /* UITableViewMock.swift */; };
 		F64B04362B6A7E8900C65905 /* MovieStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64B04352B6A7E8900C65905 /* MovieStarView.swift */; };
 		F67D5AA52B6AC25900F2EAE6 /* .env in Resources */ = {isa = PBXBuildFile; fileRef = F67D5AA42B6AC25900F2EAE6 /* .env */; };
+		F6C7090B2B7C0CD700FE47B6 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = F6C7090A2B7C0CD700FE47B6 /* SkeletonView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6C7090B2B7C0CD700FE47B6 /* SkeletonView in Frameworks */,
 				F646AC062B4F19AA00059B00 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,6 +427,7 @@
 			name = MovieViewCode;
 			packageProductDependencies = (
 				F646AC052B4F19AA00059B00 /* Kingfisher */,
+				F6C7090A2B7C0CD700FE47B6 /* SkeletonView */,
 			);
 			productName = MovieViewCode;
 			productReference = AB7FDE0C25E3E60300E092AF /* MovieViewCode.app */;
@@ -487,6 +490,7 @@
 				F646ABFE2B4F174F00059B00 /* XCRemoteSwiftPackageReference "Nimble-Snapshots" */,
 				F646AC012B4F17BC00059B00 /* XCRemoteSwiftPackageReference "Nimble" */,
 				F646AC042B4F19AA00059B00 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				F6C709092B7C0CD700FE47B6 /* XCRemoteSwiftPackageReference "SkeletonView" */,
 			);
 			productRefGroup = AB7FDE0D25E3E60300E092AF /* Products */;
 			projectDirPath = "";
@@ -859,6 +863,14 @@
 				minimumVersion = 7.10.1;
 			};
 		};
+		F6C709092B7C0CD700FE47B6 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.30.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -881,6 +893,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F646AC042B4F19AA00059B00 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		F6C7090A2B7C0CD700FE47B6 /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6C709092B7C0CD700FE47B6 /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
